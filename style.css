@@ -32,18 +32,14 @@ h2, h3 { color: var(--primary-color); }
 a { text-decoration: none; color: var(--primary-color); transition: color 0.2s ease; }
 a:hover { color: #fff; }
 
-/* --- Hero Section --- */
-.hero {
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--border-color);
-}
-.hero-text { text-align: left; }
-.hero-text h1 { font-size: 4.5rem; margin: 0; }
-.hero-text p { font-size: 1.2rem; margin-top: 0.5rem; opacity: 0.9; }
+/* --- Main Content Sections --- */
+main section { padding: 5rem 0; }
+/* Add extra padding to the top of the first section */
+main section:first-child { padding-top: 6rem; }
 
-/* --- UPDATED: About Me Section (now centered text) --- */
+main section h2 { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; }
+
+/* --- About Me Section --- */
 #about {
     text-align: center;
 }
@@ -52,10 +48,6 @@ a:hover { color: #fff; }
     margin-left: auto;
     margin-right: auto;
 }
-
-/* --- Main Content Sections --- */
-main section { padding: 6rem 0; }
-main section h2 { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; }
 
 /* --- Portfolio Grid (with Tags) --- */
 .portfolio-grid {
@@ -104,15 +96,17 @@ main section h2 { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; }
 }
 
 /* --- Contact Info Box --- */
-#contact { text-align: center; } /* Ensure parent is centered */
+/* The updated rule */
+#contact {
+    text-align: center;
+    margin-bottom: 4rem; /* Adds space between this section and the footer */
+}
 .contact-info-box {
     background-color: var(--surface-color);
     border: 1px solid var(--border-color);
     border-radius: 8px; padding: 2.5rem; margin-top: 2rem;
     max-width: 700px; margin-left: auto; margin-right: auto;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-
-    /* ADDED: This centers the link inside the box */
     text-align: center;
 }
 .contact-info-box:hover {
@@ -129,9 +123,6 @@ footer {
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-    .hero { min-height: auto; padding: 6rem 0; text-align: center; }
-    .hero-text { text-align: center; }
-    .hero-text h1 { font-size: 3rem; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .contact-info-box a { font-size: 1.2rem; }
 }

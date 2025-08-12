@@ -22,8 +22,7 @@ async function loadPageContent() {
 }
 
 function populatePersonalInfo(info) {
-    document.getElementById('owner-name').textContent = info.name;
-    document.getElementById('owner-tagline').textContent = info.tagline;
+    // UPDATED: The next two lines that populated the old header are now removed.
     document.getElementById('about-heading').textContent = `Hi, I'm ${info.name}!`;
     document.getElementById('about-me-p').textContent = info.aboutMe;
     document.getElementById('title-tag').textContent = `${info.name} | Web Development Portfolio`;
@@ -43,14 +42,8 @@ function populatePortfolio(projects) {
     grid.innerHTML = '';
 
     projects.forEach(project => {
-        // --- NEW LOGIC IS HERE ---
-        // Check if the URL is external (starts with http)
         const isExternal = project.liveSiteUrl.startsWith('http');
-
-        // If it's external, add target="_blank". Otherwise, add nothing.
         const linkTarget = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
-
-        // Generate the HTML for the tags
         let tagsHTML = '';
         if (project.tags && project.tags.length > 0) {
             tagsHTML = `
