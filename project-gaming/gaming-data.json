@@ -1,0 +1,41 @@
+{
+  "header": {
+    "title": "LEVEL UP",
+    "tagline": "High School Gaming Club"
+  },
+  "about": {
+    "title": "Welcome, Gamers!",
+    "text": "Level Up is the place for students who love video games. We play everything from competitive esports titles to casual party games. All skill levels are welcome!"
+  },
+  "events": {
+    "title": "Club Events",
+    "items": [
+      {
+        "title": "Minecraft Build-Off",
+        "date": "2025-10-18",
+        "time": "4:00 PM in the Computer Lab"
+      },
+      {
+        "title": "Super Smash Bros. Tournament",
+        "date": "2025-11-22",
+        "time": "4:00 PM in the Library"
+      },
+      {
+        "title": "LAN Party: End of Semester",
+        "date": "2025-12-20",
+        "time": "3:00 PM in the Cafeteria"
+      },
+      {
+        "title": "Mario Kart Grand Prix (Finished)",
+        "date": "2024-09-20",
+        "time": "4:00 PM in the Library"
+      }
+    ]
+  },
+  "join": {
+    "title": "Join the Club",
+    "text": "Ready to join the action? Find us on Discord to get all the latest updates and connect with other members.",
+    "buttonText": "Join Our Discord",
+    "buttonLink": "#"
+  }
+}

@@ -1,0 +1,144 @@
+/* --- Global Styles & Dark Mode Variables --- */
+:root {
+    --primary-color: #a95de2; /* A vibrant, modern purple */
+    --accent-glow: rgba(169, 93, 226, 0.5);
+    --text-color: #e0e0e0; /* A soft white for readability */
+    --background-color: #121212; /* A deep, near-black */
+    --surface-color: #1e1e1e; /* A slightly lighter surface for tiles */
+    --border-color: #333; /* A subtle border color */
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Poppins', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    color: var(--text-color);
+    /* The scrolling gradient background */
+    background: linear-gradient(180deg, #121212 0%, #2a1a3d 50%, #121212 100%);
+    background-size: 100% 300%;
+    background-position: 0% 0%;
+    transition: background-position 0.5s ease-out; /* Smooths the scroll effect */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+}
+
+h1 { color: #fff; } /* Main header name is pure white */
+h2 { color: var(--primary-color); } /* Section titles are purple */
+h3 { color: var(--primary-color); } /* Tile titles are purple */
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.2s ease;
+}
+a:hover { color: #fff; }
+
+/* --- Header --- */
+header {
+    background-color: transparent; /* Header is now transparent to show gradient */
+    text-align: center;
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 { margin: 0; font-size: 3rem; }
+header p { margin: 0; font-size: 1.2rem; opacity: 0.9; }
+
+/* --- Main Content Sections --- */
+main section { padding: 5rem 0; text-align: center; }
+/* Remove background colors so the main body gradient shows through */
+main section#portfolio, main section#contact { background-color: transparent; }
+
+/* --- Portfolio Grid (Dark Mode Tiles!) --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.portfolio-tile {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: block;
+    color: var(--text-color);
+}
+
+.portfolio-tile:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.portfolio-tile img {
+    width: 100%; height: 200px; object-fit: cover; display: block;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.portfolio-tile h3, .portfolio-tile p { padding: 0 1.5rem; }
+.portfolio-tile h3 { margin-top: 1rem; margin-bottom: 0.5rem; }
+.portfolio-tile p { margin-top: 0; margin-bottom: 1.5rem; opacity: 0.8; }
+
+.portfolio-tile.placeholder {
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; border: 2px dashed var(--border-color); color: #6c757d;
+    background-color: transparent;
+}
+
+/* --- Contact Info Box (Dark Mode) --- */
+.contact-info-box {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px; padding: 2.5rem; margin-top: 2rem;
+    max-width: 700px; margin-left: auto; margin-right: auto;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-box:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.contact-info-box a {
+    font-size: 1.5rem; font-weight: 600; color: var(--text-color);
+    text-decoration: none;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center; padding: 3rem 0; font-size: 0.9rem;
+    color: #6c757d; border-top: 1px solid var(--border-color);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    header h1 { font-size: 2.5rem; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .contact-info-box a { font-size: 1.2rem; }
+}
+
+/* --- Scroll Animation Styles --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }

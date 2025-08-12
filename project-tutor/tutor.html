@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProTutor - Expert Tutoring Services</title>
+    <link rel="stylesheet" href="tutor-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav id="navbar">
+    <div class="container">
+        <div class="logo" id="logo-text"></div>
+    </div>
+</nav>
+
+<header>
+    <div class="container">
+        <h1 id="header-title"></h1>
+        <p id="header-tagline"></p>
+        <a href="#contact" class="cta-button" id="header-cta"></a>
+    </div>
+</header>
+
+<main>
+    <!-- NEW: STATS COUNTER SECTION -->
+    <section id="stats" class="stats-section">
+        <div class="container stats-grid" id="stats-grid">
+            <!-- Stats will be injected here by JS -->
+        </div>
+    </section>
+
+    <!-- NEW: SUBJECTS OFFERED SECTION -->
+    <section id="subjects" class="container">
+        <h2 id="subjects-title"></h2>
+        <div class="subjects-grid" id="subjects-grid">
+            <!-- Subjects will be injected here by JS -->
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 id="testimonials-title"></h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-slider" id="testimonial-slider"></div>
+                <button class="carousel-btn prev" id="prev-btn">‹</button>
+                <button class="carousel-btn next" id="next-btn">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: FAQ ACCORDION SECTION -->
+    <section id="faq" class="container">
+        <h2 id="faq-title"></h2>
+        <div class="faq-accordion" id="faq-accordion">
+            <!-- FAQ items will be injected here by JS -->
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 id="contact-title"></h2>
+            <p id="contact-tagline"></p>
+            <p class="email-display" id="contact-email"></p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Website created as a portfolio piece.</p>
+</footer>
+
+<script src="tutor-script.js" defer></script>
+</body>
+</html>

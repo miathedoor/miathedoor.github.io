@@ -1,0 +1,230 @@
+/* --- Global Box Model Reset --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-font: 'Lora', serif;
+    --secondary-font: 'Roboto', sans-serif;
+    --brand-color: #634832; /* Rich brown */
+    --background-color: #fdfaf6; /* Off-white */
+    --text-color: #3d3d3d;
+}
+
+/* Add smooth scrolling for back-to-top and anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--secondary-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Ken Burns Header Effect --- */
+header {
+    position: relative; /* Needed for the pseudo-element */
+    overflow: hidden; /* Hide the parts of the image that zoom out */
+    color: white;
+    text-align: center;
+    padding: 6rem 1rem;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+    animation: kenBurns 20s infinite ease-in-out;
+}
+
+@keyframes kenBurns {
+    0% { transform: scale(1.0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.0); }
+}
+/* --- End Ken Burns --- */
+
+header h1 {
+    font-family: var(--primary-font);
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+main section {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--primary-font);
+    font-size: 2.5rem;
+    color: var(--brand-color);
+    margin-bottom: 2rem;
+}
+
+#menu {
+    background-color: #fff;
+}
+
+/* --- Filter Buttons --- */
+.menu-filters {
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--brand-color);
+    background-color: transparent;
+    color: var(--brand-color);
+    border-radius: 20px;
+    font-family: var(--secondary-font);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--brand-color);
+    color: white;
+}
+
+.filter-btn.active {
+    background-color: var(--brand-color);
+    color: white;
+}
+/* --- End Filter Buttons --- */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    aspect-ratio: 1 / 1;
+}
+
+/* For filtering animation */
+.menu-item.hidden {
+    transform: scale(0);
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: -1rem; /* Collapse space */
+}
+
+.menu-item:hover {
+    transform: scale(1.03);
+}
+
+.menu-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.menu-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-item:hover .overlay {
+    opacity: 1;
+}
+
+.menu-item:hover img {
+    filter: blur(2px);
+}
+
+.overlay h3 {
+    margin: 0 0 0.5rem 0;
+    font-family: var(--primary-font);
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+.overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 100%;
+    word-break: break-word;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    background-color: #ece5dc;
+}
+
+/* --- Back to Top Button --- */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--brand-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+.back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top-btn:hover {
+    transform: scale(1.1);
+}
+/* --- End Back to Top Button --- */

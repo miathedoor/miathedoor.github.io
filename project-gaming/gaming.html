@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Up Gaming Club</title>
+    <link rel="stylesheet" href="gaming-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Teko:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Container for the particle effect -->
+<div id="particles-js"></div>
+
+<header>
+    <div class="container">
+        <h1 id="header-title"></h1>
+        <h2 id="header-tagline"></h2>
+    </div>
+</header>
+
+<main>
+    <section id="about" class="container">
+        <h2 id="about-title"></h2>
+        <p id="about-text"></p>
+    </section>
+
+    <section id="events">
+        <div class="container">
+            <h2 id="events-title"></h2>
+            <div class="events-list" id="events-list">
+                <!-- Events will be injected and sorted here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="join" class="container">
+        <h2 id="join-title"></h2>
+        <p id="join-text"></p>
+        <a href="#" class="cta-button" id="join-button"></a>
+    </section>
+</main>
+
+<footer>
+    <p>Website created as a portfolio piece.</p>
+</footer>
+
+<!-- External library for particles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.min.js"></script>
+<!-- Our custom script -->
+<script src="gaming-script.js" defer></script>
+</body>
+</html>

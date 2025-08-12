@@ -1,0 +1,77 @@
+{
+  "logoText": "ProTutor",
+  "header": {
+    "title": "Unlock Your Academic Potential",
+    "tagline": "Personalized, one-on-one tutoring in Math, Science, and English to help you achieve your goals.",
+    "ctaButtonText": "Book a Free Consultation"
+  },
+  "stats": {
+    "items": [
+      { "number": 95, "label": "% Grade Improvement" },
+      { "number": 500, "label": "Students Helped", "suffix": "+" },
+      { "number": 12, "label": "Expert Tutors" }
+    ]
+  },
+  "subjects": {
+    "title": "Subjects We Cover",
+    "items": [
+      {
+        "icon": "🧮",
+        "title": "Mathematics",
+        "description": "From basic arithmetic to advanced calculus, we make numbers make sense."
+      },
+      {
+        "icon": "🔬",
+        "title": "Science",
+        "description": "Biology, Chemistry, and Physics, explained with clarity and hands-on examples."
+      },
+      {
+        "icon": "📖",
+        "title": "English & Writing",
+        "description": "Improve reading comprehension, essay writing, and critical analysis skills."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Parents & Students Are Saying",
+    "reviews": [
+      {
+        "quote": "Our daughter's confidence in math has skyrocketed since starting with ProTutor. Her grades went from a C to an A! We couldn't be happier.",
+        "author": "Sarah J.",
+        "role": "Parent"
+      },
+      {
+        "quote": "I finally understand algebra! My tutor explains things in a way that just makes sense. It's way better than just trying to figure it out from the textbook.",
+        "author": "Michael P.",
+        "role": "10th Grade Student"
+      },
+      {
+        "quote": "The flexible scheduling and detailed progress reports are fantastic. ProTutor has been a professional and effective service from day one.",
+        "author": "David L.",
+        "role": "Parent"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What are your tutoring rates?",
+        "answer": "Our rates vary depending on the subject and frequency of sessions. Please book a free consultation for a personalized quote."
+      },
+      {
+        "question": "Are sessions online or in-person?",
+        "answer": "We offer both online and in-person tutoring sessions to fit your family's schedule and preferences. Our online platform is interactive and easy to use."
+      },
+      {
+        "question": "How do you track student progress?",
+        "answer": "After each session, our tutors provide a brief progress report. We also conduct periodic assessments to ensure learning goals are being met and to adjust our approach as needed."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Ready to Get Started?",
+    "tagline": "Send us a message to schedule your free consultation today!",
+    "email": "contact@protutor-example.com"
+  }
+}

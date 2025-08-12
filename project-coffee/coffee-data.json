@@ -1,0 +1,46 @@
+{
+  "header": {
+    "title": "The Coffee Corner",
+    "tagline": "Your cozy neighborhood spot for the perfect brew.",
+    "backgroundImage": "coffee-hero.jpg"
+  },
+  "about": {
+    "title": "Our Story",
+    "storyText": "Founded in 2022, The Coffee Corner is a place for friends to gather and coffee lovers to unite. We believe in quality beans, handcrafted drinks, and a welcoming atmosphere."
+  },
+  "menu": {
+    "title": "Our Menu",
+    "categories": ["all", "coffee", "pastry"],
+    "items": [
+      {
+        "image": "espresso.jpg",
+        "title": "Classic Espresso",
+        "description": "A rich and aromatic shot of pure coffee.",
+        "category": "coffee"
+      },
+      {
+        "image": "latte.jpg",
+        "title": "Creamy Latte",
+        "description": "Espresso with steamed milk and a touch of foam.",
+        "category": "coffee"
+      },
+      {
+        "image": "pastry.jpg",
+        "title": "Fresh Pastries",
+        "description": "Locally baked croissants, muffins, and scones.",
+        "category": "pastry"
+      },
+      {
+        "image": "cappucino.jpg",
+        "title": "Classic Cappuccino",
+        "description": "Espresso, hot milk, and a crown of frothed milk foam.",
+        "category": "coffee"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Visit Us",
+    "address": "123 Main Street, Anytown, USA",
+    "hours": "Open Daily: 7am - 6pm"
+  }
+}
