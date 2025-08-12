@@ -3,74 +3,66 @@
     --primary-color: #a95de2; /* A vibrant, modern purple */
     --accent-glow: rgba(169, 93, 226, 0.5);
     --text-color: #e0e0e0; /* A soft white for readability */
-    --background-color: #121212; /* A deep, near-black */
-    --surface-color: #1e1e1e; /* A slightly lighter surface for tiles */
-    --border-color: #333; /* A subtle border color */
+    --text-muted: rgba(224, 224, 224, 0.7); /* Softer white for paragraphs */
+    --background-color: #121212;
+    --surface-color: #1e1e1e;
+    --border-color: #333;
     --heading-font: 'Poppins', sans-serif;
     --body-font: 'Poppins', sans-serif;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
     margin: 0;
     font-family: var(--body-font);
     color: var(--text-color);
-    /* The scrolling gradient background */
     background: linear-gradient(180deg, #121212 0%, #2a1a3d 50%, #121212 100%);
     background-size: 100% 300%;
     background-position: 0% 0%;
-    transition: background-position 0.5s ease-out; /* Smooths the scroll effect */
+    transition: background-position 0.5s ease-out;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-h1, h2, h3 {
-    font-family: var(--heading-font);
-    font-weight: 700;
-}
-
-h1 { color: #fff; } /* Main header name is pure white */
-h2 { color: var(--primary-color); } /* Section titles are purple */
-h3 { color: var(--primary-color); } /* Tile titles are purple */
-
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.2s ease;
-}
+p { color: var(--text-muted); line-height: 1.7; }
+h1, h2, h3 { font-family: var(--heading-font); font-weight: 700; }
+h1 { color: #fff; }
+h2, h3 { color: var(--primary-color); }
+a { text-decoration: none; color: var(--primary-color); transition: color 0.2s ease; }
 a:hover { color: #fff; }
 
-/* --- Header --- */
-header {
-    background-color: transparent; /* Header is now transparent to show gradient */
-    text-align: center;
-    padding: 6rem 0;
+/* --- Hero Section --- */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
     border-bottom: 1px solid var(--border-color);
 }
+.hero-text { text-align: left; }
+.hero-text h1 { font-size: 4.5rem; margin: 0; }
+.hero-text p { font-size: 1.2rem; margin-top: 0.5rem; opacity: 0.9; }
 
-header h1 { margin: 0; font-size: 3rem; }
-header p { margin: 0; font-size: 1.2rem; opacity: 0.9; }
+/* --- UPDATED: About Me Section (now centered text) --- */
+#about {
+    text-align: center;
+}
+#about p {
+    max-width: 750px; /* Constrains line length for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* --- Main Content Sections --- */
-main section { padding: 5rem 0; text-align: center; }
-/* Remove background colors so the main body gradient shows through */
-main section#portfolio, main section#contact { background-color: transparent; }
+main section { padding: 6rem 0; }
+main section h2 { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; }
 
-/* --- Portfolio Grid (Dark Mode Tiles!) --- */
+/* --- Portfolio Grid (with Tags) --- */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
 }
-
 .portfolio-tile {
     background-color: var(--surface-color);
     border: 1px solid var(--border-color);
@@ -78,49 +70,56 @@ main section#portfolio, main section#contact { background-color: transparent; }
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-    display: block;
-    color: var(--text-color);
+    text-align: left; display: block; color: var(--text-color);
 }
-
 .portfolio-tile:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 30px var(--accent-glow);
 }
-
 .portfolio-tile img {
     width: 100%; height: 200px; object-fit: cover; display: block;
     border-bottom: 1px solid var(--border-color);
 }
+.portfolio-tile h3 { padding: 0 1.5rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.portfolio-tile p { padding: 0 1.5rem; margin-top: 0; }
 
-.portfolio-tile h3, .portfolio-tile p { padding: 0 1.5rem; }
-.portfolio-tile h3 { margin-top: 1rem; margin-bottom: 0.5rem; }
-.portfolio-tile p { margin-top: 0; margin-bottom: 1.5rem; opacity: 0.8; }
-
+.portfolio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+.tag {
+    background-color: var(--border-color);
+    color: var(--text-muted);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
 .portfolio-tile.placeholder {
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     text-align: center; border: 2px dashed var(--border-color); color: #6c757d;
     background-color: transparent;
 }
 
-/* --- Contact Info Box (Dark Mode) --- */
+/* --- Contact Info Box --- */
+#contact { text-align: center; } /* Ensure parent is centered */
 .contact-info-box {
     background-color: var(--surface-color);
     border: 1px solid var(--border-color);
     border-radius: 8px; padding: 2.5rem; margin-top: 2rem;
     max-width: 700px; margin-left: auto; margin-right: auto;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
 
+    /* ADDED: This centers the link inside the box */
+    text-align: center;
+}
 .contact-info-box:hover {
     border-color: var(--primary-color);
     box-shadow: 0 0 20px var(--accent-glow);
 }
-
-.contact-info-box a {
-    font-size: 1.5rem; font-weight: 600; color: var(--text-color);
-    text-decoration: none;
-}
+.contact-info-box a { font-size: 1.5rem; font-weight: 600; color: var(--text-color); }
 
 /* --- Footer --- */
 footer {
@@ -130,12 +129,14 @@ footer {
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-    header h1 { font-size: 2.5rem; }
+    .hero { min-height: auto; padding: 6rem 0; text-align: center; }
+    .hero-text { text-align: center; }
+    .hero-text h1 { font-size: 3rem; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .contact-info-box a { font-size: 1.2rem; }
 }
 
-/* --- Scroll Animation Styles --- */
+/* --- Scroll Animation --- */
 .reveal {
     opacity: 0;
     transform: translateY(30px);

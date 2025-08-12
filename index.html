@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title-tag">Web Development Portfolio</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,14 +14,17 @@
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <h1 id="owner-name"></h1>
-        <p id="owner-tagline"></p>
+<header class="hero">
+    <div class="container hero-container">
+        <div class="hero-text">
+            <h1 id="owner-name"></h1>
+            <p id="owner-tagline"></p>
+        </div>
     </div>
 </header>
 
 <main>
+    <!-- UPDATED: Simplified "About Me" section structure -->
     <section id="about" class="container reveal">
         <h2 id="about-heading"></h2>
         <p id="about-me-p"></p>
@@ -27,7 +33,6 @@
     <section id="portfolio" class="reveal">
         <div class="container">
             <h2 id="portfolio-title"></h2>
-            <!-- The portfolio tiles will be inserted here by JavaScript -->
             <div class="portfolio-grid" id="portfolio-grid"></div>
         </div>
     </section>
@@ -37,7 +42,6 @@
         <p id="contact-description"></p>
         <div class="contact-info-box">
             <a id="contact-email-link" href="#">
-                <!-- The email address will be inserted here by JavaScript -->
                 <span id="contact-email-text"></span>
             </a>
         </div>
@@ -48,9 +52,7 @@
     <p>&copy; <span id="copyright-year"></span> <span id="copyright-name"></span>. All rights reserved.</p>
 </footer>
 
-<!-- External library for 3D tilt effect -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-<!-- Our custom script -->
 <script src="script.js"></script>
 </body>
 </html>

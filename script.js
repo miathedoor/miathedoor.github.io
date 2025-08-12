@@ -1,23 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     loadPageContent();
-
-    // --- NEW: SCROLLING GRADIENT BACKGROUND LOGIC ---
     window.addEventListener('scroll', () => {
         const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollableHeight <= 0) return;
         const scrollPercentage = (window.scrollY / scrollableHeight) * 100;
-
-        // Update the background position based on scroll percentage
         document.body.style.backgroundPosition = `0% ${scrollPercentage}%`;
     });
 });
 
-// Main function to fetch data and populate the page
 async function loadPageContent() {
     try {
         const response = await fetch('data.json');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
-
         populatePersonalInfo(data.personalInfo);
         populatePortfolio(data.projects);
         initializeTilt();
@@ -27,7 +22,6 @@ async function loadPageContent() {
 }
 
 function populatePersonalInfo(info) {
-    // Set text for all elements, including the new ones
     document.getElementById('owner-name').textContent = info.name;
     document.getElementById('owner-tagline').textContent = info.tagline;
     document.getElementById('about-heading').textContent = `Hi, I'm ${info.name}!`;
@@ -36,14 +30,10 @@ function populatePersonalInfo(info) {
     document.getElementById('portfolio-title').textContent = info.portfolioTitle;
     document.getElementById('contact-title').textContent = info.contactTitle;
     document.getElementById('contact-description').textContent = info.contactDescription;
-
-    // Contact Email Box
     const emailLink = document.getElementById('contact-email-link');
     const emailText = document.getElementById('contact-email-text');
     emailLink.href = `mailto:${info.email}`;
     emailText.textContent = info.email;
-
-    // Footer
     document.getElementById('copyright-year').textContent = info.copyrightYear;
     document.getElementById('copyright-name').textContent = info.name;
 }
@@ -53,12 +43,29 @@ function populatePortfolio(projects) {
     grid.innerHTML = '';
 
     projects.forEach(project => {
-        // UPDATED: Removed target="_blank" so links open in the same tab
+        // --- NEW LOGIC IS HERE ---
+        // Check if the URL is external (starts with http)
+        const isExternal = project.liveSiteUrl.startsWith('http');
+
+        // If it's external, add target="_blank". Otherwise, add nothing.
+        const linkTarget = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
+
+        // Generate the HTML for the tags
+        let tagsHTML = '';
+        if (project.tags && project.tags.length > 0) {
+            tagsHTML = `
+                <div class="portfolio-tags">
+                    ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+            `;
+        }
+
         const tileHTML = `
-            <a href="${project.liveSiteUrl}" class="portfolio-tile" data-tilt>
+            <a href="${project.liveSiteUrl}" class="portfolio-tile" data-tilt ${linkTarget}>
                 <img src="images/${project.imageTile}" alt="Screenshot of the ${project.title}">
                 <h3>${project.title}</h3>
                 <p>${project.tileDescription}</p>
+                ${tagsHTML}
             </a>
         `;
         grid.innerHTML += tileHTML;
@@ -73,7 +80,6 @@ function populatePortfolio(projects) {
     grid.innerHTML += placeholderHTML;
 }
 
-// --- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ---
 const revealElements = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -85,12 +91,8 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 revealElements.forEach(element => observer.observe(element));
 
-// --- TILT.JS INITIALIZATION ---
 function initializeTilt() {
     VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
-        max: 15,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.2
+        max: 15, speed: 400, glare: true, "max-glare": 0.2
     });
 }

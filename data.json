@@ -2,7 +2,7 @@
   "personalInfo": {
     "name": "Mia Isidore",
     "tagline": "High School Student & Aspiring Web Developer",
-    "email": "isidoremia@gmail.com",
+    "email": "miathedoor@gmail.com",
     "aboutMe": "I'm a 17-year-old student with a passion for building things on the web. I'm currently creating websites for free to gain valuable experience and build a strong portfolio. My goal is to create clean, modern, and user-friendly websites for small businesses, clubs, or individuals.",
     "copyrightYear": "2025",
     "portfolioTitle": "My Work",
@@ -15,21 +15,40 @@
       "title": "The Coffee Corner",
       "tileDescription": "A warm, responsive website for a local coffee shop.",
       "imageTile": "tile-coffee.png",
-      "liveSiteUrl": "project-coffee/coffee.html"
+      "liveSiteUrl": "project-coffee/coffee.html",
+      "tags": ["HTML", "CSS", "JavaScript"]
     },
     {
       "id": "pro-tutor",
       "title": "ProTutor Landing Page",
       "tileDescription": "A clean, professional landing page for a tutoring service.",
       "imageTile": "tile-tutor.png",
-      "liveSiteUrl": "project-tutor/tutor.html"
+      "liveSiteUrl": "project-tutor/tutor.html",
+      "tags": ["HTML", "CSS", "JavaScript"]
     },
     {
       "id": "gaming-club",
       "title": "Level Up Gaming Club",
       "tileDescription": "A modern, dark-themed site for a school gaming club.",
       "imageTile": "tile-gaming.png",
-      "liveSiteUrl": "project-gaming/gaming.html"
+      "liveSiteUrl": "project-gaming/gaming.html",
+      "tags": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "id": "skz-paint",
+      "title": "SKZ Paint",
+      "tileDescription": "Themed paint application",
+      "imageTile": "tile-skz-paint.png",
+      "liveSiteUrl": "https://github.com/miathedoor/SKZ-Paint/blob/main/README.md",
+      "tags": ["Python"]
+    },
+    {
+      "id": "terra-quest",
+      "title": "Terra Quest",
+      "tileDescription": "An endless scroller with random, yet cohesively generated terrains.",
+      "imageTile": "tile-terra-quest.png",
+      "liveSiteUrl": "https://github.com/miathedoor/Terra-Quest",
+      "tags": ["Python"]
     }
   ]
 }
